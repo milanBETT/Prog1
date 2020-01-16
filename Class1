@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Prog1
+{
+    public class Beta
+    {
+        public static RandNumb(int randNum, Random rand)/////Konstruktor????, ?nem jó név?
+        {
+            
+            randNum = rand.Next(1, 1000);
+            Alpha.tomb[Alpha.v] = randNum;
+            Console.WriteLine(Alpha.tomb[Alpha.v]);
+
+        }
+    }/////Öröklés?
+}
