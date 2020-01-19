@@ -1,18 +1,19 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Prog1
+namespace MyApplication
 {
-    public class Beta
+    public class Alpha
     {
-        public static RandNumb(int randNum, Random rand)/////Konstruktor????, ?nem jó név?
+        public static int randNum;
+        ///Konstruktor ami random számokat hoz létre
+        public Alpha()
         {
-            
-            randNum = rand.Next(1, 1000);
-            Alpha.tomb[Alpha.v] = randNum;
-            Console.WriteLine(Alpha.tomb[Alpha.v]);
-
+          Random rand = new Random();
+          randNum = rand.Next(1, 100);                      
         }
-    }/////Öröklés?
+    }
+    public class Beta : Alpha ///Öröklés
+    {
+        
+    }
 }
