@@ -1,28 +1,28 @@
 using System;
 
-namespace Prog1
+namespace MyApplication
 {
-    class Alpha
+    class Program
     {
         public static int[] tomb;
-        public static int v;
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             Console.WriteLine("Milyen hosszú legyen a tömb?");
             int th = Convert.ToInt32(Console.ReadLine());
-            tomb = new int[th];
-            v = 0;
-
-            for (int i = 0; i < th; i++)
-            {
-                RandNum(int randNum, Random rand);/////Hogy kell hivatkozni?
-            
+            tomb = new int[th];          
+            for (int i = 0; i < tomb.Length; i++)
+            {///Konstruktor meghívása, tomb[i]-nek érték adása, és kiiratása 
+                _ = new Alpha();
+                tomb[i] = Alpha.randNum;
+                Console.WriteLine(tomb[i]);
             }
-            for (int j = th-1; j>0; j--)
+            Console.WriteLine();
+            ///Buborékos rendezés
+            for (int j = th - 1; j > 0; j--)
             {
                 for (int k = 0; k < j; k++)
                 {
-                    if (tomb[k]>tomb[k+1])
+                    if (tomb[k] > tomb[k + 1])
                     {
                         int s = tomb[k + 1];
                         tomb[k + 1] = tomb[k];
@@ -32,10 +32,10 @@ namespace Prog1
             }
             for (int i = 0; i < th; i++)
             {
-                Console.Write("{0} ", tomb[i]);
-                Console.WriteLine();
+                Console.Write("{0} ", tomb[i]);                             
             }
+            Console.WriteLine();
             Console.ReadKey();
-        }
+        }               
     }
 }
