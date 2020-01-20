@@ -4,16 +4,29 @@ namespace MyApplication
 {
     public class Alpha
     {
-        public static int randNum;
-        ///Konstruktor ami random számokat hoz létre
-        public Alpha()
+      public static int randNum;
+        public Alpha()///Konstruktor ami random számokat hoz létre
         {
-          Random rand = new Random();
-          randNum = rand.Next(1, 100);                      
+            Random rand = new Random();
+            randNum = rand.Next(1, 100);
         }
     }
-    public class Beta : Alpha ///Öröklés
+    public class Beta : Program ///Öröklés
     {
-        
+        public static void Rend()///Rendezés
+        {
+        for (int j = th - 1; j > 0; j--)
+        {
+            for (int k = 0; k < j; k++)
+            {
+               if (tomb[k] > tomb[k + 1])
+               {
+                        int s = tomb[k + 1];
+                        tomb[k + 1] = tomb[k];
+                        tomb[k] = s;
+               }
+            }
+        }
+        }
     }
 }
