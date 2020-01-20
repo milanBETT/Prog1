@@ -2,40 +2,36 @@ using System;
 
 namespace MyApplication
 {
-    class Program
+   public class Program
     {
         public static int[] tomb;
+        public static int th;
         static void Main(string[] args)
         {
             Console.WriteLine("Milyen hosszú legyen a tömb?");
-            int th = Convert.ToInt32(Console.ReadLine());
-            tomb = new int[th];          
-            for (int i = 0; i < tomb.Length; i++)
-            {///Konstruktor meghívása, tomb[i]-nek érték adása, és kiiratása 
+            th = Convert.ToInt32(Console.ReadLine());
+            tomb = new int[th];
+            for (int i = 0; i < tomb.Length; i++)///Feltöltés
+            {
                 _ = new Alpha();
                 tomb[i] = Alpha.randNum;
-                Console.WriteLine(tomb[i]);
             }
-            Console.WriteLine();
-            ///Buborékos rendezés
-            for (int j = th - 1; j > 0; j--)
-            {
-                for (int k = 0; k < j; k++)
-                {
-                    if (tomb[k] > tomb[k + 1])
-                    {
-                        int s = tomb[k + 1];
-                        tomb[k + 1] = tomb[k];
-                        tomb[k] = s;
-                    }
-                }
-            }
+            ///Kiiratás
+            Console.WriteLine("Rendezettlen tömb:");
             for (int i = 0; i < th; i++)
             {
-                Console.Write("{0} ", tomb[i]);                             
+                Console.Write(tomb[i] + " ");               
+            }
+            Console.WriteLine();
+            Beta.Rend();
+            Console.WriteLine("Rendezett tömb:");
+            for (int i = 0; i < th; i++)
+            {
+                Console.Write(tomb[i] + " ");
+                
             }
             Console.WriteLine();
             Console.ReadKey();
-        }               
+        }
     }
 }
